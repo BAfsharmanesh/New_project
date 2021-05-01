@@ -24,7 +24,7 @@ def optimize(trial, df):
     modelf = lgb.LGBMClassifier(
         n_estimators=n_estimators, num_leaves=num_leaves, learning_rate=learning_rate)
 
-    kf = model_selection.KFold(n_splits=5)
+    kf = model_selection.GroupKFold(n_splits=5, groups=df.iloc[:,-1])
     comp_metric = []
     for fold, (train_idx, val_idx) in enumerate(kf.split(df)):       
         
