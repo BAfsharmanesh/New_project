@@ -31,15 +31,15 @@ def optimize(trial, df):
         df_train = df.loc[train_idx]
         df_val = df.loc[val_idx]
         
-        x_train = df_train.iloc[:,:-5]
-        y_trainx = df_train.iloc[:,-5]
-        y_trainy = df_train.iloc[:,-4]
-        y_trainf = df_train.iloc[:,-3]        
+        x_train = df_train.iloc[:,:-4]
+        y_trainx = df_train.iloc[:,-4]
+        y_trainy = df_train.iloc[:,-3]
+        y_trainf = df_train.iloc[:,-2]        
         
-        x_val = df_val.iloc[:,:-5]
-        y_valx = df_val.iloc[:,-5]
-        y_valy = df_val.iloc[:,-4]
-        y_valf = df_val.iloc[:,-3]          
+        x_val = df_val.iloc[:,:-4]
+        y_valx = df_val.iloc[:,-4]
+        y_valy = df_val.iloc[:,-3]
+        y_valf = df_val.iloc[:,-2]          
 
         modelx.fit(x_train, y_trainx)
         modely.fit(x_train, y_trainy)
