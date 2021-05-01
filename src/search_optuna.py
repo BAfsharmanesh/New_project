@@ -49,7 +49,7 @@ def optimize(trial, df):
         test_predsy = modely.predict(x_val)
         test_predsf = modelf.predict(x_val)
   
-        fold_metric = iln_comp_metric(test_predsx, test_predsy, test_predsf, y_valx, y_valy, y_valf)
+        fold_metric = hyperpara_search_optuna.iln_comp_metric(test_predsx, test_predsy, test_predsf, y_valx, y_valy, y_valf)
         comp_metric.append(fold_metric)
     return np.mean(comp_metric)
 
