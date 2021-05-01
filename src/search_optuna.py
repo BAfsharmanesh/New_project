@@ -25,7 +25,7 @@ def optimize(trial, df):
         n_estimators=n_estimators, num_leaves=num_leaves, learning_rate=learning_rate)
 
     kf = model_selection.KFold(n_splits=5)
-    accuracies = []
+    comp_metric = []
     for fold, (train_idx, val_idx) in enumerate(kf.split(df)):       
         
         df_train = df.loc[train_idx]
@@ -43,8 +43,6 @@ def optimize(trial, df):
 
         modelx.fit(x_train, y_trainx)
         modely.fit(x_train, y_trainy)
-        print(x_train)
-        print(y_trainf)
         modelf.fit(x_train, y_trainf)
 
         test_predsx = modelx.predict(x_val)
