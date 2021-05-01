@@ -7,7 +7,7 @@ from sklearn import model_selection
 from functools import partial
 import optuna
 
-from regression_metrics import iln_comp_metric
+from . import regression_metrics.iln_comp_metric
 
 def optimize(trial, df):
 
