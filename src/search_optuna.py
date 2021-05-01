@@ -43,6 +43,8 @@ def optimize(trial, df):
 
         modelx.fit(x_train, y_trainx)
         modely.fit(x_train, y_trainy)
+        print(x_train)
+        print(y_trainf)
         modelf.fit(x_train, y_trainf)
 
         test_predsx = modelx.predict(x_val)
