@@ -28,8 +28,8 @@ def optimize(trial, df):
     accuracies = []
     for fold, (train_idx, val_idx) in enumerate(kf.split(df)):       
         
-        df_train = df[train_idx]
-        df_val = df[val_idx]
+        df_train = df.loc[train_idx]
+        df_val = df.loc[val_idx]
         
         x_train = df_train.iloc[:,:-5]
         y_trainx = df_train.iloc[:,-5]
