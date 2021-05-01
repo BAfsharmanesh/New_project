@@ -82,7 +82,7 @@ class CrossValidation:
 
 if __name__ == "__main__":
     df = pd.read_csv("../input/indoor-navigation-and-location-wifi-features/wifi_features/train/5a0546857ecc773753327266_1000_train.csv")
-    cv = CrossValidation(df, shuffle=True, target_cols=["attribute_ids"], 
+    cv = CrossValidation(df, shuffle=True, target_cols=["x"], 
                          problem_type="multi_col_regression", num_folds=5)
     df_split = cv.split()
     print(df_split.head())
